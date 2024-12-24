@@ -1,0 +1,51 @@
+{
+  "name": "@sotiaf/so-media-manager",
+  "version": "1.6.2",
+  "description": "Sotiaf - React component to manage media from API or S3",
+  "author": "Sotiaf",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "rollup": "rollup -c --bundleConfigAsCjs",
+    "rollup:ts": "rollup -c rollup.config.ts --configPlugin typescript",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-image": "^3.0.3",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@storybook/addon-essentials": "^7.6.4",
+    "@storybook/addon-interactions": "^7.6.4",
+    "@storybook/addon-links": "^7.6.4",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.4",
+    "@storybook/react": "^7.6.4",
+    "@storybook/react-webpack5": "^7.6.4",
+    "@storybook/test": "^7.6.4",
+    "@types/react": "^18.2.42",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.4",
+    "dayjs": "^1.11.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^4.6.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.6.4",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.2"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.2.42",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,40 @@
+.so-mm-hourglass {
+  display: block;
+  background: rgba(95, 158, 160, 0.3);
+  margin: 3em auto;
+  width: 2em;
+  height: 4em;
+  animation: 2s hourglass 1s linear infinite;
+}
+
+.so-mm-hourglass.outer {
+  fill: rgba(95, 158, 160, 0.3);
+}
+
+.so-mm-hourglass.middle {
+  fill: rgba(95, 158, 160, 0.3);
+}
+
+@keyframes hourglass{
+  0% {
+    transform:rotate(0deg);
+    box-shadow:
+      inset rgba(95, 158, 160, 0.3) 0 -0em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -4em 0 0;
+  }
+  70% {
+    transform: rotate(0deg);
+    box-shadow:
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0;
+  }
+  100% {
+    transform: rotate(180deg);
+    box-shadow:
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0,
+      inset rgba(95, 158, 160, 0.3) 0 -2em 0 0;
+  }
+}
