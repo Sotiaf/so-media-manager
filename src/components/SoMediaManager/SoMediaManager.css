@@ -2,7 +2,12 @@
   --color-primary: rgb(230, 234, 235);
   --color-primary-darker: rgb(205, 210, 211);
   --color-border: 201, 201, 201;
-  --opacity-gray: 0.8
+  --opacity-gray: 0.8;
+
+  --color-primary-dark: rgb(50, 50, 50);
+  --color-primary-darker-dark: rgb(30, 30, 30);
+  --color-border-darkfhdhfd: 80, 80, 80;
+  --opacity-gray-dark: 0.6;
 }
 
 .so-media-manager p {
@@ -348,4 +353,118 @@
 
 .so-mm-validation button.so-mm-btn-validation:hover {
   background: var(--color-primary-darker);
+}
+
+.sodark {
+  --color-primary: var(--color-primary-dark);
+  --color-primary-darker: var(--color-primary-darker-dark);
+  --color-border: var(--color-border-dark);
+  --opacity-gray: var(--opacity-gray-dark);
+}
+
+.sodark .so-media-manager {
+  background: rgb(20, 20, 20);
+  color: white;
+  border: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+}
+
+.sodark .so-media-manager p {
+  color: white;
+}
+
+.sodark .so-media-manager ol,
+.sodark .so-media-manager ul {
+  color: white;
+}
+
+.sodark .so-media-manager button {
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+.sodark .so-media-manager button:hover:not(:disabled) {
+  background: rgba(var(--color-border-dark), 0.2);
+}
+
+.sodark .so-media-manager button.so-mm-button-selected {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.sodark .so-mm-separator-vertical {
+  background: rgba(var(--color-border-dark), var(--opacity-gray-dark));
+}
+
+.sodark .so-mm-explorer {
+  border: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+  background: rgb(30, 30, 30);
+}
+
+.sodark .so-mm-explorer-inner .so-mm-file {
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+.sodark .so-mm-file.so-mm-file-selected {
+  background: var(--color-primary-dark);
+}
+ .sodark .so-mm-explorer-inner.so-mm-explorer-view-list .so-mm-file:not(:nth-last-child(1)) {
+  border-bottom: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+}
+
+.sodark .so-mm-file .so-mm-file-content .so-mm-file-name {
+  color: white;
+}
+
+.sodark .so-mm-top-nav {
+  background: rgb(30, 30, 30);
+  color: white;
+}
+
+.sodark .so-mm-ariane {
+  border: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+.sodark .so-mm-search input {
+  background: rgb(30, 30, 30);
+  color: white;
+  border: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+}
+
+.sodark .so-mm-search input:focus {
+  border: 2px solid white;
+}
+
+.sodark .so-mm-search button {
+  background: rgb(40, 40, 40);
+  color: white;
+}
+
+.sodark .so-mm-context-menu {
+  background: rgb(40, 40, 40);
+  color: white;
+  border: 1px solid rgba(var(--color-border-dark), var(--opacity-gray-dark));
+}
+
+.sodark .so-mm-validation button.so-mm-btn-validation {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.sodark .so-mm-validation button.so-mm-btn-validation:hover {
+  background: var(--color-primary-darker-dark);
+}
+
+.sodark .so-mm-action-nav svg {
+  border: white;
+}
+
+.sodark .so-mm-context-menu button {
+  color: white;
+}
+
+.sodark .so-mm-context-menu button svg {
+  border: white;
 }

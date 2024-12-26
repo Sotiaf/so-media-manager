@@ -32,6 +32,8 @@ interface SoMediaManagerProps {
   right?: Right
   /* Display a validation button at bottom */
   confirmButton?: boolean
+  /* Display in dark mode */
+  darkMode?: boolean
   /* Function to handle all define action (even your custom action) */
   handleAction: (action: SoMediaManagerAction | string, opts: ActionOpts) => void
 }
@@ -46,7 +48,8 @@ export const SoMediaManager: React.FC<SoMediaManagerProps> = ({
   sorters,
   right,
   confirmButton,
-  handleAction
+  handleAction,
+  darkMode = false
 }) => {
   /*** FOLDER ***/
   const [folderPath, setFolderPath] = useState<FolderModel[]>(folderChain)
@@ -310,60 +313,62 @@ export const SoMediaManager: React.FC<SoMediaManagerProps> = ({
   }
 
   return (
-    <div
-      className={`so-media-manager ${moveFileModal ? "so-mm-move-file" : ""}`}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleManagerMouseUp}
-    >
-      <Menu
-        actions={actionsRegistered}
-        sorters={sortersRegistered}
-        right={right}
-        handleActions={_handleActions}
-        filesSelected={filesSelected}
-        folderChain={folderPath}
-        view={view}
-        sort={sort}
-        sortDirection={sortDirection}
-        setSearch={setSearch}
-      />
-      <div className="so-mm-explorer">
-        <div className={`so-mm-explorer-inner so-mm-explorer-view-${view}`}>
-          {listFiles.map((file, index) =>
-            <File
-              index={index}
-              key={index}
-              file={file}
-              selected={isSelected(file)}
-              _onMouseUp={handleMouseUp}
-              onMouseDown={handleMouseDown}
-            />
-          )}
+    <div className={`${darkMode ? 'sodark' : ''}`}>
+      <div
+        className={`so-media-manager  ${moveFileModal ? "so-mm-move-file" : ""}`}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleManagerMouseUp}
+      >
+        <Menu
+          actions={actionsRegistered}
+          sorters={sortersRegistered}
+          right={right}
+          handleActions={_handleActions}
+          filesSelected={filesSelected}
+          folderChain={folderPath}
+          view={view}
+          sort={sort}
+          sortDirection={sortDirection}
+          setSearch={setSearch}
+        />
+        <div className="so-mm-explorer">
+          <div className={`so-mm-explorer-inner so-mm-explorer-view-${view}`}>
+            {listFiles.map((file, index) =>
+              <File
+                index={index}
+                key={index}
+                file={file}
+                selected={isSelected(file)}
+                _onMouseUp={handleMouseUp}
+                onMouseDown={handleMouseDown}
+              />
+            )}
+          </div>
+          {moveFileModal &&
+            <FloatContext
+              x={mouseX + 10}
+              y={mouseY}
+              open={moveFileModal}
+              close={() => setMoveFileModal(false)}
+              side="left"
+            >
+              <p>{filesSelected.length} item(s) sélectionné(s)</p>
+            </FloatContext>
+          }
         </div>
-        {moveFileModal &&
-          <FloatContext
-            x={mouseX + 10}
-            y={mouseY}
-            open={moveFileModal}
-            close={() => setMoveFileModal(false)}
-            side="left"
-          >
-            <p>{filesSelected.length} item(s) sélectionné(s)</p>
-          </FloatContext>
+        {confirmButton &&
+          <div className="so-mm-validation">
+            <button
+              type="button"
+              className="so-mm-btn-validation"
+              disabled={filesSelected.length === 1 && !filesSelected[0].isDir ? false : true}
+              onClick={() => handleDoubleClick(filesSelected[0])}
+            >
+              Valider
+            </button>
+          </div>
         }
       </div>
-      {confirmButton &&
-        <div className="so-mm-validation">
-          <button
-            type="button"
-            className="so-mm-btn-validation"
-            disabled={filesSelected.length === 1 && !filesSelected[0].isDir ? false : true}
-            onClick={() => handleDoubleClick(filesSelected[0])}
-          >
-            Valider
-          </button>
-        </div>
-      }
     </div>
   );
 };

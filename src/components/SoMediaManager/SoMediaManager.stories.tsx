@@ -5,6 +5,7 @@ import { FileModel } from "../../models/file.model";
 import { SoMediaManagerAction } from "../../enums/actions";
 import { SettingIcon } from '../icons/SettingIcon';
 import dayjs from "dayjs";
+import { fn } from "@storybook/test";
 
 const meta: Meta = {
   title: 'So Media Manager',
@@ -13,6 +14,7 @@ const meta: Meta = {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
+  //args: { onClick: fn() },
 } satisfies Meta<typeof SoMediaManager>;
 
 export default meta;
@@ -108,7 +110,7 @@ export const Default: Story = {
         "isDir": false,
         "size": 20967,
         "modDate": "2023-10-23T14:28:07.950Z",
-        "thumbnailUrl": "https://bo-ws.sotiaf.fr/magnificat-fr/FR/2023_11/treated/image/31e_TO_A_ps130.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=6BR4ZfcuHNeKqbAjl0Sx%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T104830Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6b8f60fa15cecea3b3f70420484a4f7d27ebbfe46de2dc24e43b49c0e5e8f17f"
+        "thumbnailUrl": "https://static.vecteezy.com/system/resources/thumbnails/008/695/917/small_2x/no-image-available-icon-simple-two-colors-template-for-no-image-or-picture-coming-soon-and-placeholder-illustration-isolated-on-white-background-vector.jpg"
       },
       {
         "id": "32e_TO_A_ps62.png_6",
